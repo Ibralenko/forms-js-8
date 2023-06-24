@@ -8,8 +8,41 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <h1>калькулятор стоимости автомобиля</h1>
-    testtesttest
+    <main>
+    <h1>Калькулятор стоимости автомобиля</h1>
+    <select name="brand[]" placeholder="Выберите марку автомобиля">
+        <option selected disabled>Выберите марку автомобиля</option>
+        <option value="Reno">Reno</option>
+        <option value="Opel">Opel</option>
+        <option value="Mazda">Mazda</option>
+        <option value="Jaguar"> Jaguar</option>
+    </select>
+    <select name="model[]" placeholder="Выберите модель автомобиля">
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+    </select>
+    <fieldset>
+        <legend>Топливо</legend>
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked>
+            <label for="scales">Бензин</label>
+        </div>
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked>
+            <label for="scales">Газ</label>
+        </div>
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked>
+            <label for="scales">Дизель</label>
+        </div>
+        <div>
+            <input type="checkbox" id="scales" name="scales" checked>
+            <label for="scales">Электричество</label>
+        </div>
+    </fieldset>
+</main>
+    <script src="./index.js"></script>
 </body>
-<script src="./index.js"></script>
 </html>
