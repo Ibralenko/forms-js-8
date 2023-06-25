@@ -1,0 +1,29 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+  
+  body {
+    background: #f4f4f4;
+  }
+  .wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  form {
+    background-color: rgb(212, 212, 238);
+    max-width: 400px;
+    text-align: center;
+    margin: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+  }
