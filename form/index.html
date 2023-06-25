@@ -11,7 +11,7 @@
 <body>
     <form action="">
         <p><input name="user" minlength="2" maxlength="20" required placeholder="Ваше имя"></p>
-        <p><input name="email" required placeholder="Ваш адрес электронной почты"></p>
+        <p><input name="email" required placeholder="Ваш адрес электронной почты" pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)"></p>
         <input type="number" required placeholder="Введите ваш возраст">
         <p><b>Выберите пол</b></p>
         <p><input name="dzen" type="radio" value="nedzen">Мужчина</p>
@@ -26,7 +26,7 @@
             <option> Продавец</option>
             <option selected disabled>  Другое</option>
         </select>
-        <input type="password" required  minlength="8" size="40" name="password" placeholder="Введите пароль" pattern="^[A-Z]"></p>
+        <input type="password" required  minlength="8" size="40" name="password" placeholder="Введите пароль" pattern="/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g"></p>
     </form>
 
 
