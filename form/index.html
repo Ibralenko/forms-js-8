@@ -9,7 +9,25 @@
     <link rel="stylesheet" href="./assets/index.css">
 </head>
 <body>
-
+    <form action="">
+        <p><input name="user" minlength="2" maxlength="20" required placeholder="Ваше имя"></p>
+        <p><input name="email" required placeholder="Ваш адрес электронной почты"></p>
+        <input type="number" required placeholder="Введите ваш возраст">
+        <p><b>Выберите пол</b></p>
+        <p><input name="dzen" type="radio" value="nedzen">Мужчина</p>
+        <p><input name="dzen" type="radio" value="dzen">Женщина</p>
+        <p><input type="submit" value="Отправить"></p>
+        <select name="profession" required placeholder="Выберите вашу профессию">
+            <option> Врач</option>
+            <option> Программист</option>
+            <option> Учитель</option>
+            <option>  Дизайнер</option>
+            <option>  Инженер</option>
+            <option> Продавец</option>
+            <option selected disabled>  Другое</option>
+        </select>
+        <input type="password" required  minlength="8" size="40" name="password" placeholder="Введите пароль" pattern="^[A-Z]"></p>
+    </form>
 
 
     <script src="./assets/index.js"></script>
