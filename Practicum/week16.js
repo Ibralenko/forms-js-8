@@ -5,7 +5,8 @@
 const paragraph = document.getElementById('practicum');
 
 function makeOne() {
-	//Ваш код
+	const forms = document.forms;
+	paragraph.textContent = forms.length;
 }
 
 document.querySelector('.b-1').onclick = makeOne;
@@ -17,7 +18,8 @@ document.querySelector('.b-1').onclick = makeOne;
 const paragraphTwo = document.getElementById('practicum2');
 
 function makeTwo() {
-	//Ваш код
+	const firstForm = document.forms[0];
+	paragraphTwo.textContent = firstForm.getAttribute('name');
 }
 
 document.querySelector('.b-2').onclick = makeTwo;
@@ -29,7 +31,9 @@ document.querySelector('.b-2').onclick = makeTwo;
 const paragraphThree = document.getElementById('practicum3');
 
 function makeThree() {
-	//Ваш код
+	const forms = document.forms;
+	const lastForm = forms [forms.length -1];
+	paragraphThree.textContent = lastForm.getAttribute('name')
 }
 
 document.querySelector('.b-3').onclick = makeThree;
@@ -49,8 +53,16 @@ document.querySelector('.b-3').onclick = makeThree;
 const paragraphFour = document.getElementById('practicum4');
 
 function makeFour() {
-	//Ваш код
-}
+	const forms = document.forms;
+	const formNames = [];
+
+	for (let form of forms) {
+		const name = form.getAttribute('name');
+		formNames.push(name);
+	}
+
+	paragraphFour.textContent = formNames.join(',');
+};
 
 document.querySelector('.b-4').onclick = makeFour;
 
