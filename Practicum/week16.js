@@ -7,7 +7,7 @@ const paragraph = document.getElementById('practicum');
 function makeOne() {
 	const forms = document.forms;
 	paragraph.textContent = forms.length;
-}
+};
 
 document.querySelector('.b-1').onclick = makeOne;
 
@@ -20,7 +20,7 @@ const paragraphTwo = document.getElementById('practicum2');
 function makeTwo() {
 	const firstForm = document.forms[0];
 	paragraphTwo.textContent = firstForm.getAttribute('name');
-}
+};
 
 document.querySelector('.b-2').onclick = makeTwo;
 
@@ -34,7 +34,7 @@ function makeThree() {
 	const forms = document.forms;
 	const lastForm = forms [forms.length -1];
 	paragraphThree.textContent = lastForm.getAttribute('name')
-}
+};
 
 document.querySelector('.b-3').onclick = makeThree;
 
@@ -74,8 +74,10 @@ document.querySelector('.b-4').onclick = makeFour;
 const paragraphFive = document.getElementById('practicum5');
 
 function makeFive() {
-	//Ваш код
-}
+	const thirdForm = document.forms.formThree;
+	const formElements = thirdForm.elements.length;
+	paragraphFive.textContent = formElements;
+};
 
 document.querySelector('.b-5').onclick = makeFive;
 
@@ -86,8 +88,10 @@ document.querySelector('.b-5').onclick = makeFive;
 const paragraphSix = document.getElementById('practicum6');
 
 function makeSix() {
-	//Ваш код
-}
+	const secondForm = document.forms.formTwo;
+	const formlements = secondForm.elements.length;
+	paragraphSix.textContent= formlements;
+};
 
 document.querySelector('.b-6').onclick = makeSix;
 
@@ -105,8 +109,17 @@ document.querySelector('.b-6').onclick = makeSix;
 const paragraphSeven = document.getElementById('practicum7');
 
 function makeSeven() {
-	//Ваш код
-}
+	const forms = document.forms;
+	const secondForm  = forms[1];
+	const formElements = secondForm.elements;
+	let elementsList;
+
+	for(element of formElements){
+		const formName = element.getAttribute('name');
+		elementsList += ` ${formName}`;
+	}
+	paragraphSeven.textContent = elementsList;
+};
 
 document.querySelector('.b-7').onclick = makeSeven;
 
@@ -116,8 +129,15 @@ document.querySelector('.b-7').onclick = makeSeven;
 const paragraphEight = document.getElementById('practicum8');
 
 function makeEight() {
-	//Ваш код
-}
+	const firstFormElements = document.forms[0].elements;
+	let elementsList;
+
+	for(element of firstFormElements){
+		const formName = element.getAttribute('name');
+		elementsList += ` ${formName}`;
+	}
+	paragraphEight.textContent = elementsList;
+};
 
 document.querySelector('.b-8').onclick = makeEight;
 
@@ -127,7 +147,14 @@ document.querySelector('.b-8').onclick = makeEight;
 const paragraphNine = document.getElementById('practicum9');
 
 function makeNine() {
-	//Ваш код
+	const thirdFormElements = document.forms[2].elements;
+	let elementsList;
+
+	for(element of thirdFormElements){
+		const formName = element.getAttribute('name');
+		elementsList += ` ${formName}`;
+	}
+	paragraphNine.textContent = elementsList;
 }
 
 document.querySelector('.b-9').onclick = makeNine;
@@ -139,7 +166,9 @@ document.querySelector('.b-9').onclick = makeNine;
 const paragraphTen = document.getElementById('practicum10');
 
 function makeTen() {
-	//Ваш код
+	const thirdFormElements = document.forms[2].elements;
+
+
 }
 
 document.querySelector('.b-10').onclick = makeTen;
