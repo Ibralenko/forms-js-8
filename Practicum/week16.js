@@ -155,21 +155,21 @@ function makeNine() {
 		elementsList += ` ${formName}`;
 	}
 	paragraphNine.textContent = elementsList;
-}
+};
 
 document.querySelector('.b-9').onclick = makeNine;
 
 //Задание 10
-//Выведите на экран значенеие radio кнопки третьей формы на странице
+//Выведите на экран значенеие radio кнопки третьей (?????!!) формы на странице
 //Подсказка: используйте коллекцию document.forms для доступа к формам, свойство elements для доступа к элементам формы и свойство value для получения значения radio кнопки
 
 const paragraphTen = document.getElementById('practicum10');
 
 function makeTen() {
-	const thirdFormElements = document.forms[2].elements;
-
-
-}
+	const fourthForm = document.forms[3];
+	const elementOfForm = fourthForm.elements.fourthName;
+	paragraphTen.textContent = elementOfForm.value;
+};
 
 document.querySelector('.b-10').onclick = makeTen;
 
@@ -186,8 +186,16 @@ document.querySelector('.b-10').onclick = makeTen;
 const paragraphEleven = document.getElementById('practicum11');
 
 function makeEleven() {
-	//Ваш код
-}
+	const firstForm = document.forms[0];
+	const formElements = firstForm.elements.firstSelect;
+	let optionsValues;
+
+	for(let option of formElements){
+		const oneElValue = option.value;
+		optionsValues += oneElValue;
+	}
+	paragraphEleven.textContent = optionsValues;
+};
 
 document.querySelector('.b-11').onclick = makeEleven;
 
@@ -201,8 +209,12 @@ document.querySelector('.b-11').onclick = makeEleven;
 const paragraphTwelve = document.getElementById('practicum12');
 
 function makeTwelve() {
-	//Ваш код
-}
+	const secondForm = document.forms[1];
+	const firstCheckbox = second.elements.checkboxOne.getAttribute('id');
+	const secondCheckbox= second.elements.checkboxTwo.getAttribute('id');
+	const thirdCheckbox = second.elements.checkboxThree.getAttribut('id');
+	paragraphTwelve.textContent = `${firstCheckbox}, ${secondCheckbox}, ${thirdCheckbox}`
+};
 
 document.querySelector('.b-12').onclick = makeTwelve;
 
@@ -218,8 +230,15 @@ document.querySelector('.b-12').onclick = makeTwelve;
 const paragraphThirteen = document.getElementById('practicum13');
 
 function checkButton(e) {
-	//Ваш код
-}
+	const fourthForm = document.forms[3];
+	const formRadioElement = fourthForm.elements.fourthName;
+
+	if (formRadioElement.checked){
+		return (paragraphThirteen.textContent = `Кнопка выбрана`);
+	}else {
+		return (paragraphThirteen.textContent = `Кнопка yt выбрана`);
+	}
+};
 
 document.querySelector('.b-13').addEventListener('click', checkButton);
 
@@ -238,8 +257,21 @@ document.querySelector('.b-13').addEventListener('click', checkButton);
 const paragraphFourteen = document.getElementById('practicum14');
 
 function checkOption() {
-	//Ваш код
-}
+	const formOne = document.forms[0];
+	const selectFormOne = formOne.elements.firstSelect;
+	const selectedOption = selectFormOne.value;
+	select.selectedIndex = 1;
+
+	if (selectedOption === "Опция 1"){
+		return (paragraphFourteen.textContent = 'Выбран первый вариант')
+	}
+	if (selectedOption === "Опция 2"){
+		return (paragraphFourteen.textContent = 'Выбран второй вариант')
+	}
+	if (selectedOption === "Опция 3"){
+		return (paragraphFourteen.textContent = 'Выбран третий вариант')
+	}
+};
 
 document.querySelector('.b-14').onclick = checkOption;
 
@@ -252,7 +284,9 @@ document.querySelector('.b-14').onclick = checkOption;
 //- Установите значение selectedIndex равным индексу опции, которую вы хотите выбрать по умолчанию
 
 function makeFifteen() {
-	//Ваш код
+	const firstForm = document.forms[0];
+	const selectFirstForm = firstForm.elements.firstSelect;
+	select.selectedIndex = 2;
 }
 
 makeFifteen();
@@ -266,7 +300,9 @@ makeFifteen();
 //- Установите значение checked равным true для выбранного варианта
 
 function makeSixteen() {
-	//Ваш код
+	const secondForm = document.forms[0];
+	const checkboxSecondForm = secondForm.elements.checkboxThree;
+	checkboxSecondForm.checked = true;
 }
 
 makeSixteen();
@@ -298,8 +334,10 @@ formOne.addEventListener('submit', function (event) {
 
 formOne.addEventListener('submit', function (event) {
 	event.preventDefault(); //Отмена отправки
-	//Ваш код
+	const oneForm = document.forms[0];
+	oneForm.reset();
 });
+
 
 //Задание 19
 //При выборе определенной опции из выпадающего списка измените цвет фона страницы
@@ -309,11 +347,17 @@ formOne.addEventListener('submit', function (event) {
 //- В обработчике события, используя условные операторы (if), проверьте выбранную опцию
 //- В зависимости от выбранной опции, измените цвет фона страницы, используя свойство document.body.style.backgroundColor
 
-//const selectElement = //Ваш код
+const selectElement =document.getElementById('firstSelect');
 
-// selectElement.onchange = function () {
-// 	//Ваш код
-// };
+ selectElement.onchange = function () {
+	if (selectElement.value === "Опция 1"){
+		document.body.style.backgroundColor = "#AA0000";
+	} else if (selectElement.value === "Опция 2"){
+		document.body.style.backgroundColor = "#AA5673";
+	} else if (selectElement.value === "Опция 3"){
+		document.body.style.backgroundColor = "	#7FFF00";
+ }};
+
 
 //Задание 20
 //Добавьте валидацию для поля Email
@@ -326,9 +370,16 @@ formOne.addEventListener('submit', function (event) {
 
 //const emailInput = //Ваш код
 const errorMessage = document.getElementById('errorMessage');
+const firstForm = document.forms[0];
+const emailElement = firstForm.elements.firstEmail;
 
 emailInput.oninput = function () {
-	//Ваш код
+	const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+	if(emailElement.value.match(mailFormat)){
+		return true;
+	} else emailElement.style.color = 'red';
+			errorMessage.textContent = 'Введеен неверный адрес электронной почты'
 };
 
 //Задание 21
@@ -345,12 +396,12 @@ document.querySelector('.b-21').onclick = function (event) {
 	});
 
 	if (!isChecked) {
-		//Ваш код
+		preventDefault();
+		document.getElementById('result21').textContent = 'Проверка не пройдена';
 	} else {
 		document.getElementById('result21').textContent = 'Проверка пройдена';
 	}
 };
-
 //Задание 22
 //При отправке третьей формы выполняется проверка поля Имя на заполненность. Если поле Имя пустое, отмените отправку формы и выведите сообщение об ошибке в элементе с id "result22".
 
@@ -358,7 +409,8 @@ document.querySelector('.b-22').onclick = function (event) {
 	const nameInput = document.forms.formThree.elements.thirdName;
 
 	if (nameInput.value.trim() === '') {
-		//Ваш код
+		preventDefault();
+		document.getElementById('result22').textContent = 'Проверка не пройдена';
 	} else {
 		document.getElementById('result22').textContent = 'Проверка пройдена';
 	}
@@ -373,7 +425,11 @@ document.querySelector('.b-22').onclick = function (event) {
 //Подсказка: для установки атрибута используйте методы forEach и setAttribute
 
 document.querySelector('.b-24').onclick = function () {
-	//Ваш код
+	const inputs = document.querySelectorAll('input');
+
+	inputs.forEach(function (input) {
+	input.setAttribute('placeholder', 'Введите данные')
+	})
 };
 
 //Задание 25
