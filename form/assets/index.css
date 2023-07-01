@@ -10,6 +10,7 @@ html {
   body {
     font-family: 'Noto Sans', sans-serif;
     background-image: url(/assets/bg-img.jpg);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -34,7 +35,7 @@ html {
 }
 .form{
   text-align: center;
-  margin: 10px auto;
+  margin: 0px auto;
   color: rgb(236, 230, 230);
   display: flex;
   flex-direction: column;
@@ -43,11 +44,56 @@ html {
   font-style: italic;
   box-shadow: 2px 2px 25px 0 #040404;
   backdrop-filter: blur(10px);
+  text-shadow:
+  1px  1px 0 #000,
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px  1px 0 #000,
+  1px  1px 0 #000;
 }
 .label{
   padding: 5px;
- font-size: 13px;
+  font-size: 13px;
+}
+.label-select{
+  margin: 0px;
+}
+.gender-input{
+  margin: 0px;
 }
 input, select{
   margin: 10px;
+}
+.select__option{
+  box-shadow: 2px 2px 25px 0 #040404;
+  border-radius: 5px;
+  font-style: italic;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: transparent;
+}
+
+.password-container{
+  display: flex;
+  flex-direction: column;
+}
+.btn{
+  font-style: italic;
+  font-family: 'Noto Sans', sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 360px;
+  color: aliceblue;
+  text-shadow:
+  2px  2px 0 #000,
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px  1px 0 #000,
+  1px  1px 0 #000;
+  background-image: url(./bg-btn.JPG);
+}
+.btn:hover{
+  opacity: 0.8;
+  border: 1px solid #0d046c;
 }
