@@ -1,29 +1,53 @@
 html {
     box-sizing: border-box;
   }
-  
   *,
   *::before,
   *::after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
   }
-  
   body {
-    background: #f4f4f4;
+    font-family: 'Noto Sans', sans-serif;
+    background-image: url(/assets/bg-img.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
   }
   .wrapper {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 15px;
   }
-  form {
-    background-color: rgb(212, 212, 238);
-    max-width: 400px;
-    text-align: center;
-    margin: 10px;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
+
+  .header{
+    max-width: 1300px;
+    height: 40px;
+    background-color: transparent;
   }
+.header__title{
+  text-align: center;
+  color: rgb(236, 235, 235);
+  font-family: 'Noto Sans', sans-serif;
+  font-style: italic;
+}
+.form{
+  text-align: center;
+  margin: 10px auto;
+  color: rgb(236, 230, 230);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-family: 'Noto Sans', sans-serif;
+  font-style: italic;
+  box-shadow: 2px 2px 25px 0 #040404;
+  backdrop-filter: blur(10px);
+}
+.label{
+  padding: 5px;
+ font-size: 13px;
+}
+input, select{
+  margin: 10px;
+}
