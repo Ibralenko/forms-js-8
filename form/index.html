@@ -29,11 +29,12 @@
             <input type="number" id="age" value="18" size="3" class="user-age" name="age" min="10" max="100" required
                 placeholder="Введите ваш возраст">
             <div class="select-container">
-                <!-- <label for="gender-input" class="label-select"><b>Выберите пол:</b></label>
+                <span class="error-sex" id="age-error"></span>
+                <label for="gender-input" class="label-select"><b>Выберите пол:</b></label>
                 <p><input class="gender-input" id="man" name="gender" type="radio" value="man">Мужчина</p>
                 <p><input class="gender-input" id="woman" name="gender" type="radio" value="woman">Женщина</p>
-                <span class="error-sex" id="age-error"></span> -->
             </div>
+            <span class="error-profession"></span>
             <label class="label" for="profession">Выберите вашу профессию:</label>
             <select class="select-input" id="profession" class="profession" name="profession" required
                 placeholder="Выберите вашу профессию">
@@ -44,7 +45,6 @@
                 <option class="select__option" value="option5">Инженер</option>
                 <option class="select__option" value="option6">Продавец</option>
                 <option class="select__option" value="option7" selected disabled>Другое</option>
-                <span class="error-profession"></span>
             </select>
             <div class="password-container">
                 <label class="label" for="password">Введите пароль:</label>
@@ -58,10 +58,9 @@
                     placeholder="Повторите пароль"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></p>
             </div>
-            <label class="label" for="checkbox">Согласие на обработку данных:</label>
             <span class="error-checkbox" ></span>
+            <label class="label" for="checkbox">Согласие на обработку данных:</label>
             <p><input id="checkbox" type="checkbox" name="checkbox">Я прочитал условия</p>
-
             <p><input class="btn" type="submit" name="submit" value="Зарегистрироваться"></p>
             <p class="errorsInfo"></p>
         </form>

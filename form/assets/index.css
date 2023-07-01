@@ -35,6 +35,7 @@ html {
 }
 .form{
   min-width: 500px;
+  max-height: 800px;
   text-align: center;
   margin: 0px auto;
   color: rgb(236, 230, 230);
@@ -102,7 +103,12 @@ input:valid {
 .error-password,
 .error-password2,
 .error-name,
-.error-email{
+.error-email,
+.error-checkbox,
+.error-profession{
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Noto Sans', sans-serif;
   color: red;
   border: 1 solid red;
 }

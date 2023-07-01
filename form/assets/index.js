@@ -8,6 +8,7 @@ const inputProfession = registrationForm.elements.profession;
 const inputPassword = registrationForm.elements.password;
 const inputConfirmPassword = registrationForm.elements.passwordRepeat;
 const inputCheckbox = registrationForm.elements.checkbox;
+const inputs = document.querySelectorAll("input");
 
 function checkName(name){
     if (name.value === ""){
@@ -33,7 +34,7 @@ function checkPassword(password) {
     }else if(password.value === ''){
         document.querySelector('.error-password').innerHTML = 'Введите пароль';
     } else {
-        document.querySelector('.error-password').innerHTML = 'Введите пкорректный пароль';
+        document.querySelector('.error-password').innerHTML = 'Введите корректный пароль';
         return false;
     }
 };
@@ -44,24 +45,26 @@ function checkPasswords(password1, password2){
     } else {
         document.querySelector('.error-password2').innerHTML = 'Пароли не совпадают'
     }
-}
+};
 
 
-/*function checkAgreement(checkbox){}
-if (inputCheckbox.checked) {
+function checkAgreement(checkbox){
+if (checkbox.checked) {
 	return true;
 	} else {
-	document.querySelector('.error-checkbox').innerHTML = 'Вы не подтвердили согласие'
-};*/
+	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями'
+}};
 
 
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
-    checkName (inputUserName)
-    // ValidateEmail(inputUserEmail)
+    checkName (inputUserName);
+    checkAgreement(inputCheckbox);
+    // ValidateEmail(inputUserEmail);
     checkPassword(inputPassword);
     checkPasswords(inputPassword.value, inputConfirmPassword.value);
     console.log('click');
+
 });
 
 
