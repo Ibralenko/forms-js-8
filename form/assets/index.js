@@ -9,16 +9,22 @@ const inputPassword = registrationForm.elements.password;
 const inputConfirmPassword = registrationForm.elements.passwordRepeat;
 const inputCheckbox = registrationForm.elements.checkbox;
 
-function checkName (name){
+function checkName(name){
     if (name.value === ""){
         document.querySelector('.error-name').innerHTML = 'Введите имя'
     } else {
         return true;
     }
-}
+};
 
 function ValidateEmail(email) {
-
+    if (email.value === " "){
+        document.querySelector('.error-email').innerHTML = 'Введите email'
+    } else if (email.value.patternMismatch){
+        return true;
+    } else {
+        document.querySelector('.error-email').innerHTML = 'Введите корректный email'
+    }
 };
 
 function checkPassword(password) {
@@ -41,16 +47,16 @@ function checkPasswords(password1, password2){
 
 /*function checkAgreement(checkbox){}
 if (inputCheckbox.checked) {
-	button.disabled = false;
+	return true;
 	} else {
-	button.disabled = true;
+	document.querySelector('.error-checkbox').innerHTML = 'Вы не подтвердили согласие'
 };*/
 
 
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
     checkName (inputUserName)
-    ValidateEmail(inputUserEmail.value)
+    ValidateEmail(inputUserEmail)
     checkPassword(inputPassword);
     checkPasswords(inputPassword.value, inputConfirmPassword.value);
     console.log('click');

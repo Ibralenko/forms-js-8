@@ -101,7 +101,8 @@ input:valid {
 }
 .error-password,
 .error-password2,
-.error-name{
+.error-name,
+.error-email{
   color: red;
   border: 1 solid red;
 }
