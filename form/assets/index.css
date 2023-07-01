@@ -95,6 +95,11 @@ input, select{
 input:invalid {
   border: 2px solid red;
 }
-.valid {
-  background-color: green;
+input:valid {
+  border-color: green;
+}
+.error-password,
+.error-password2{
+  color: red;
+  border: 1 solid red;
 }
