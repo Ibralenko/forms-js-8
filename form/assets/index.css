@@ -9,7 +9,7 @@ html {
   }
   body {
     font-family: 'Noto Sans', sans-serif;
-    background-image: url(/assets/bg-img.jpg);
+    background: linear-gradient(to right, #0f2027, #2e515d, #386173);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -34,6 +34,7 @@ html {
   font-style: italic;
 }
 .form{
+  min-width: 500px;
   text-align: center;
   margin: 0px auto;
   color: rgb(236, 230, 230);
@@ -45,11 +46,11 @@ html {
   box-shadow: 2px 2px 25px 0 #040404;
   backdrop-filter: blur(10px);
   text-shadow:
-  1px  1px 0 #000,
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px  1px 0 #000,
-  1px  1px 0 #000;
+  0.2px   0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  0.2px  0.2px 0 #000;
 }
 .label{
   padding: 5px;
@@ -80,20 +81,20 @@ input, select{
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
   cursor: pointer;
+  background-color: rgb(41, 57, 194);
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   height: 40px;
   width: 360px;
   color: aliceblue;
-  text-shadow:
-  2px  2px 0 #000,
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px  1px 0 #000,
-  1px  1px 0 #000;
   background-image: url(./bg-btn.JPG);
 }
 .btn:hover{
   opacity: 0.8;
-  border: 1px solid #0d046c;
+}
+input:invalid {
+  border: 2px solid red;
+}
+.valid {
+  background-color: green;
 }
