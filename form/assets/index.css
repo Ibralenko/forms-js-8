@@ -93,13 +93,15 @@ input, select{
   opacity: 0.8;
 }
 input:invalid {
-  border: 2px solid red;
+  background-color: rgb(249, 203, 203);
+  border: 1px solid red;
 }
 input:valid {
-  border-color: green;
+  border-color: rgb(223, 246, 223);
 }
 .error-password,
-.error-password2{
+.error-password2,
+.error-name{
   color: red;
   border: 1 solid red;
 }

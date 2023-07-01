@@ -9,13 +9,20 @@ const inputPassword = registrationForm.elements.password;
 const inputConfirmPassword = registrationForm.elements.passwordRepeat;
 const inputCheckbox = registrationForm.elements.checkbox;
 
+function checkName (name){
+    if (name.value === ""){
+        document.querySelector('.error-name').innerHTML = 'Введите имя'
+    } else {
+        return true;
+    }
+}
 
 function ValidateEmail(email) {
 
 };
 
 function checkPassword(password) {
-    if (password.value.patternMismatch & password.value.patternMismatch) {
+    if (password.value.patternMismatch && password.value.patternMismatch)  {
         return true;
     } else {
         document.querySelector('.error-password').innerHTML = 'Введите пароль согласно правилам';
@@ -31,20 +38,21 @@ function checkPasswords(password1, password2){
     }
 }
 
-function checkAgreement(checkbox){}
+
+/*function checkAgreement(checkbox){}
 if (inputCheckbox.checked) {
 	button.disabled = false;
 	} else {
 	button.disabled = true;
-};
+};*/
 
 
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
+    checkName (inputUserName)
     ValidateEmail(inputUserEmail.value)
     checkPassword(inputPassword);
     checkPasswords(inputPassword.value, inputConfirmPassword.value);
-    checkAgreement(inputCheckbox);
     console.log('click');
 });
 
