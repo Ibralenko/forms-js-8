@@ -17,7 +17,7 @@ function checkName(name){
     }
 };
 
-function ValidateEmail(email) {
+/*function ValidateEmail(email) {
     if (email.value === " "){
         document.querySelector('.error-email').innerHTML = 'Введите email'
     } else if (email.value.patternMismatch){
@@ -25,13 +25,15 @@ function ValidateEmail(email) {
     } else {
         document.querySelector('.error-email').innerHTML = 'Введите корректный email'
     }
-};
+};*/
 
 function checkPassword(password) {
     if (password.value.patternMismatch && password.value.patternMismatch)  {
         return true;
+    }else if(password.value === ''){
+        document.querySelector('.error-password').innerHTML = 'Введите пароль';
     } else {
-        document.querySelector('.error-password').innerHTML = 'Введите пароль согласно правилам';
+        document.querySelector('.error-password').innerHTML = 'Введите пкорректный пароль';
         return false;
     }
 };
@@ -56,7 +58,7 @@ if (inputCheckbox.checked) {
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
     checkName (inputUserName)
-    ValidateEmail(inputUserEmail)
+    // ValidateEmail(inputUserEmail)
     checkPassword(inputPassword);
     checkPasswords(inputPassword.value, inputConfirmPassword.value);
     console.log('click');
