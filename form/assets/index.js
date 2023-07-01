@@ -30,18 +30,18 @@ const checkbox = form.elements.checkbox;
 //         return false;
 //     }
 // }
+	if (checkbox.checked) {
+		button.disabled = false;
+		} else {
+		button.disabled = true;
+		}
 
-let isChecked = false;
-if (checkbox.checked) {
-    isChecked = true;
-} else {
-    button.disabled = true;
-}
 
 
 form.addEventListener('submit', function(event){
     event.preventDefault();
     console.log('click')
+
     ValidateEmail()
 
     form.reset()
