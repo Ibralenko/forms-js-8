@@ -9,8 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./assets/normalize.css">
-    <link rel="stylesheet" href="./assets/index.css">
+        <link rel="stylesheet" href="./assets/style/normalize.css">
+        <link rel="stylesheet" href="./assets/style/index.css">
 </head>
 
 <body>
@@ -46,7 +46,6 @@
                 <option class="select__option" value="option6">Продавец</option>
                 <option class="select__option" value="option7" selected disabled>Другое</option>
             </select>
-            <div class="password-container">
                 <label class="label" for="password">Введите пароль:</label>
                 <span class="error-password"></span>
                 <input id="password" class="input" type="password" required minlength="8" size="40" name="password"
@@ -57,14 +56,12 @@
                 <input class="input" id="passwordRepeat" type="password" required minlength="8" size="40" name="passwordRepeat"
                     placeholder="Повторите пароль"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></p>
-            </div>
-            <div class="agreement">
             <span class="error-checkbox" ></span>
             <label class="label" for="checkbox">Согласие на обработку данных:</label>
             <p><input class="checkbox" id="checkbox" type="checkbox" name="checkbox">Я прочитал условия</p>
             <p class="errorsInfo"></p>
             <p><input class="btn" type="submit" name="submit" value="Зарегистрироваться"></p>
-        </div>
+
         </form>
     </section>
 

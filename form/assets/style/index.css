@@ -9,13 +9,11 @@ html {
   }
   body{
     font-family: 'Noto Sans', sans-serif;
-    background: linear-gradient(to right, #0f271f, #286259, #2f6453);
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-background-image: url(./bg-img.jpg);
-
+    background-image: url(/assets/img/bg-img.jpg);
   }
   .wrapper {
     max-width: 1300px;
@@ -71,7 +69,6 @@ input, select{
   height: 33px;
   width: 350px;
 }
-
 .select__option{
   box-shadow: 2px 2px 25px 0 #040404;
   border-radius: 5px;
@@ -80,17 +77,10 @@ input, select{
   background-color: transparent;
 }
 
-.password-container{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
 .agreement{
   display: flex;
   flex-direction: column;
-  margin-bottom: 0px;
 }
-
 .btn{
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
@@ -107,8 +97,8 @@ input, select{
   opacity: 0.8;
 }
 input:invalid {
-  background-color: rgb(249, 203, 203);
-  border: 1px solid red;
+  background-color: rgb(251, 223, 223);
+  border: 1px solid rgb(199, 2, 2);
 }
 input:valid {
   border-color: rgb(223, 246, 223);
