@@ -12,6 +12,7 @@ const inputCheckbox = registrationForm.elements.checkbox;
 function checkName(name){
     if (name.value.trim() === ""){
         document.querySelector('.error-name').innerHTML = 'Введите имя'
+        return false;
     } else {
         return true;
     }
@@ -23,6 +24,7 @@ function validateEmail(email) {
         return true;
     }else if (email.value === ''){
         document.querySelector('.error-email').innerHTML = 'Введите email'
+        return false;
     } else {
         document.querySelector('.error-email').innerHTML = 'Введите корректный email'
         return false;
@@ -42,6 +44,7 @@ function checkPasswords(password1, password2){
         return true;
     } else {
         document.querySelector('.error-password2').innerHTML = 'Пароли не совпадают'
+        return false;
     }
 };
 
@@ -50,20 +53,34 @@ if (checkbox.checked) {
 	return true;
 	} else {
 	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями'
+    return false;
 }};
+
+function isValidateForm  () {
+    if (checkName (inputUserName) === false ||
+    checkAgreement(inputCheckbox) === false ||
+    validateEmail(inputUserEmail) === false ||
+    checkPassword(inputPassword) === false ||
+    checkPasswords(inputPassword, inputConfirmPassword) === false ){
+        document.querySelector('.errorsInfo').innerHTML = 'Заполните все поля'
+        return false;
+    } else {
+        console.log("it's ok");
+        document.querySelector('.error-checkbox').innerHTML = '';
+        document.querySelector('.error-password2').innerHTML = '';
+        document.querySelector('.error-password').innerHTML = '';
+        document.querySelector('.error-name').innerHTML = '';
+        document.querySelector('.error-email').innerHTML = '';
+        document.querySelector('.errorsInfo').innerHTML = ''
+        registrationForm.reset();
+        return true;
+    }
+}
 
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
-    checkName (inputUserName);
-    checkAgreement(inputCheckbox);
-    validateEmail(inputUserEmail);
-    checkPassword(inputPassword);
-    checkPasswords(inputPassword, inputConfirmPassword);
-    console.log('click');
-
-    if ( checkAgreement, checkName , validateEmail,   checkPassword,   checkPasswords === true){
-    console.log('Отлично! Вы зарегистрированы')
-    registrationForm.reset();
+    if (isValidateForm ()=== true){
+        console.log('Регистрация завершена')
     }
 });
 
