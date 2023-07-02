@@ -44,7 +44,6 @@ function checkPasswords(password1, password2){
         return true;
     } else {
         document.querySelector('.error-password2').innerHTML = 'Пароли не совпадают'
-        return false;
     }
 };
 
@@ -53,7 +52,6 @@ if (checkbox.checked) {
 	return true;
 	} else {
 	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями'
-    return false;
 }};
 
 function isValidateForm  () {
@@ -79,6 +77,10 @@ function isValidateForm  () {
 
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
+    checkName(inputUserName);
+    validateEmail(inputUserEmail);
+    checkPassword(inputPassword);
+    checkPasswords(inputPassword ,inputConfirmPassword);
     if (isValidateForm ()=== true){
         console.log('Регистрация завершена')
     }

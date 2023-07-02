@@ -56,13 +56,13 @@ html {
   font-size: 13px;
 }
 .label-select{
-  margin: 0px;
+  margin: 10px;
 }
 .gender-input{
-  margin: 0px;
+  margin: 10px;
 }
 input, select{
-  margin: auto;
+  margin: 5px auto;
 }
 .input, .select-input{
   border-radius: 5px;
