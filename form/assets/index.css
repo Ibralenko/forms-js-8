@@ -7,13 +7,14 @@ html {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
   }
-  body {
+  body{
     font-family: 'Noto Sans', sans-serif;
     background: linear-gradient(to right, #0f2027, #2e515d, #386173);
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 
   }
   .wrapper {
@@ -34,8 +35,7 @@ html {
   font-style: italic;
 }
 .form{
-  min-width: 500px;
-  max-height: 800px;
+  min-width: 400px;
   text-align: center;
   margin: 0px auto;
   color: rgb(236, 230, 230);
@@ -54,7 +54,7 @@ html {
   0.2px  0.2px 0 #000;
 }
 .label{
-  padding: 5px;
+  padding: 3px;
   font-size: 13px;
 }
 .label-select{
@@ -64,8 +64,14 @@ html {
   margin: 0px;
 }
 input, select{
-  margin: 10px;
+  margin: auto;
 }
+.input, .select-input{
+  border-radius: 5px;
+  height: 33px;
+  width: 350px;
+}
+
 .select__option{
   box-shadow: 2px 2px 25px 0 #040404;
   border-radius: 5px;
@@ -77,7 +83,14 @@ input, select{
 .password-container{
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
+.agreement{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
 .btn{
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
@@ -106,9 +119,16 @@ input:valid {
 .error-email,
 .error-checkbox,
 .error-profession{
+  margin: 0;
   font-size: 15px;
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
-  color: red;
+  color: rgb(254, 6, 6);
   border: 1 solid red;
+  text-shadow:
+  0.2px   0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  -0.2px -0.2px 0 #000,
+  0.2px  0.2px 0 #000;
 }

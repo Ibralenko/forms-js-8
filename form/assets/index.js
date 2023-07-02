@@ -8,16 +8,14 @@ const inputProfession = registrationForm.elements.profession;
 const inputPassword = registrationForm.elements.password;
 const inputConfirmPassword = registrationForm.elements.passwordRepeat;
 const inputCheckbox = registrationForm.elements.checkbox;
-const inputs = document.querySelectorAll("input");
 
 function checkName(name){
-    if (name.value === ""){
+    if (name.value.trim() === ""){
         document.querySelector('.error-name').innerHTML = 'Введите имя'
     } else {
         return true;
     }
 };
-
 
 function validateEmail(email) {
     const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
@@ -28,16 +26,14 @@ function validateEmail(email) {
     } else {
         document.querySelector('.error-email').innerHTML = 'Введите корректный email'
         return false;
-    }};
-
+}};
 
 function checkPassword(password) {
-    if (password === '')  {
-        document.querySelector('.error-password').innerHTML = 'Введите пароль';
-    } else if(password.patternMismatch && password.patternMismatch ){
+    const correctPassword  = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    if(password.value.match(correctPassword)){
         return true;
-    } else {
-    document.querySelector('.error-password').innerHTML = 'Введите корректный пароль';
+    }else {
+        document.querySelector('.error-password').innerHTML = 'Введите корректный пароль';
     }
 };
 
@@ -56,18 +52,18 @@ if (checkbox.checked) {
 	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями'
 }};
 
-
 registrationForm.addEventListener('submit', function(event){
     event.preventDefault();
     checkName (inputUserName);
     checkAgreement(inputCheckbox);
     validateEmail(inputUserEmail);
-    checkPassword(inputPassword.value);
+    checkPassword(inputPassword);
     checkPasswords(inputPassword, inputConfirmPassword);
     console.log('click');
 
-    if (checkAgreement, checkName === true){
+    if ( checkAgreement, checkName , validateEmail,   checkPassword,   checkPasswords === true){
     console.log('Отлично! Вы зарегистрированы')
+    registrationForm.reset();
     }
 });
 
