@@ -36,6 +36,7 @@ function checkPassword(password) {
         return true;
     }else {
         document.querySelector('.error-password').innerHTML = 'Введите корректный пароль';
+        return false;
     }
 };
 
@@ -44,6 +45,7 @@ function checkPasswords(password1, password2){
         return true;
     } else {
         document.querySelector('.error-password2').innerHTML = 'Пароли не совпадают'
+        return false;
     }
 };
 
@@ -51,7 +53,8 @@ function checkAgreement(checkbox){
 if (checkbox.checked) {
 	return true;
 	} else {
-	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями'
+	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями';
+    return false;
 }};
 
 function isValidateForm  () {

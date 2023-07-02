@@ -110,9 +110,9 @@ p{
 .btn:hover{
   opacity: 0.8;
 }
-.important:hover {
-  background-color: rgb(251, 223, 223);
-  border: 1px solid rgb(240, 130, 130);
+.important:active {
+  background-color: rgb(224, 251, 223);
+  border: 1px solid rgb(138, 240, 165);
 }
 input:focus::placeholder {
   color: transparent;
@@ -131,11 +131,11 @@ input:valid {
   font-size: 10px;
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
-  color: rgb(254, 6, 6);
+  color: #e32d2b;
   text-shadow:
-  0.2px   0.2px 0 #000,
-  -0.2px -0.2px 0 #000,
-  -0.2px -0.2px 0 #000,
-  -0.2px -0.2px 0 #000,
-  0.2px  0.2px 0 #000;
+  0.2px   0.2px 0 #7d0303,
+  -0.2px -0.2px 0 #6f0202,
+  -0.2px -0.2px 0 #750202,
+  -0.2px -0.2px 0 #ff0000,
+  0.2px  0.2px 0 #ff0000;
 }
