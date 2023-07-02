@@ -2,15 +2,15 @@ const registrationForm = document.forms.registrationForm;
 const button = registrationForm.elements.submit;
 const inputUserName = registrationForm.elements.name;
 const inputUserEmail = registrationForm.elements.email;
-const inputUserAge =registrationForm.elements.age;
-const inputUserSex =registrationForm.elements.gender;
+const inputUserAge = registrationForm.elements.age;
+const inputUserSex = registrationForm.elements.gender;
 const inputProfession = registrationForm.elements.profession;
 const inputPassword = registrationForm.elements.password;
 const inputConfirmPassword = registrationForm.elements.passwordRepeat;
 const inputCheckbox = registrationForm.elements.checkbox;
 
-function checkName(name){
-    if (name.value.trim() === ""){
+function checkName(name) {
+    if (name.value.trim() === "") {
         document.querySelector('.error-name').innerHTML = 'Введите имя'
         return false;
     } else {
@@ -22,25 +22,26 @@ function validateEmail(email) {
     const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (email.value.match(mailFormat)) {
         return true;
-    }else if (email.value === ''){
+    } else if (email.value === '') {
         document.querySelector('.error-email').innerHTML = 'Введите email'
         return false;
     } else {
         document.querySelector('.error-email').innerHTML = 'Введите корректный email'
         return false;
-}};
+    }
+};
 
 function checkPassword(password) {
-    const correctPassword  = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-    if(password.value.match(correctPassword)){
+    const correctPassword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    if (password.value.match(correctPassword)) {
         return true;
-    }else {
+    } else {
         document.querySelector('.error-password').innerHTML = 'Введите корректный пароль';
         return false;
     }
 };
 
-function checkPasswords(password1, password2){
+function checkPasswords(password1, password2) {
     if (password1.value === password2.value) {
         return true;
     } else {
@@ -49,20 +50,21 @@ function checkPasswords(password1, password2){
     }
 };
 
-function checkAgreement(checkbox){
-if (checkbox.checked) {
-	return true;
-	} else {
-	document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями';
-    return false;
-}};
+function checkAgreement(checkbox) {
+    if (checkbox.checked) {
+        return true;
+    } else {
+        document.querySelector('.error-checkbox').innerHTML = 'Ознакомьтесь с условиями';
+        return false;
+    }
+};
 
-function isValidateForm  () {
-    if (checkName (inputUserName) === false ||
-    checkAgreement(inputCheckbox) === false ||
-    validateEmail(inputUserEmail) === false ||
-    checkPassword(inputPassword) === false ||
-    checkPasswords(inputPassword, inputConfirmPassword) === false ){
+function isValidateForm() {
+    if (checkName(inputUserName) === false ||
+        checkAgreement(inputCheckbox) === false ||
+        validateEmail(inputUserEmail) === false ||
+        checkPassword(inputPassword) === false ||
+        checkPasswords(inputPassword, inputConfirmPassword) === false) {
         document.querySelector('.errorsInfo').innerHTML = 'Заполните все поля'
         return false;
     } else {
@@ -78,14 +80,14 @@ function isValidateForm  () {
     }
 }
 
-registrationForm.addEventListener('submit', function(event){
+registrationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     checkName(inputUserName);
     validateEmail(inputUserEmail);
     checkPassword(inputPassword);
-    checkPasswords(inputPassword ,inputConfirmPassword);
+    checkPasswords(inputPassword, inputConfirmPassword);
     checkAgreement(inputCheckbox);
-    if (isValidateForm ()=== true){
+    if (isValidateForm() === true) {
         console.log('Регистрация завершена')
     }
 });

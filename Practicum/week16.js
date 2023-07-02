@@ -453,11 +453,11 @@ document.querySelector('.b-25').onclick = function () {
 
 	inputs.forEach(function (input) {
 		input.addEventListener('focus', function () {
-			//Ваш код
+			input.style.border = "#00ff00";
 		});
 
 		input.addEventListener('blur', function () {
-			//Ваш код
+			input.style.border = "";
 		});
 	});
 };
@@ -467,7 +467,9 @@ document.querySelector('.b-25').onclick = function () {
 
 document.querySelector('.b-26').onclick = function (event) {
 	event.preventDefault();
-	//Ваш код
+	const result = document.querySelector("#result26");
+	const placeholder = document.forms[2].elements.thirdName;
+	result.textContent = placeholder.getAttribute("placeholder");
 };
 
 //Задание 27
@@ -477,7 +479,8 @@ const formTwoInputs = document.querySelectorAll('.secondForm input');
 
 formTwoInputs.forEach(function (input) {
 	input.addEventListener('input', function () {
-		//Ваш код
+		const result27 = document.querySelector('#result27')
+		result27.textContent = 'Изменение внесено';
 	});
 });
 
@@ -487,7 +490,8 @@ formTwoInputs.forEach(function (input) {
 const selectFormThree = document.getElementById('firstSelect');
 
 selectFormThree.addEventListener('change', function () {
-	//Ваш код
+	const result28 = document.querySelector("#result28");
+	result28.textContent = "Опция выбрана";
 });
 
 //Задание 29
