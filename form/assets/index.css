@@ -9,12 +9,12 @@ html {
   }
   body{
     font-family: 'Noto Sans', sans-serif;
-    background: linear-gradient(to right, #0f2027, #2e515d, #386173);
+    background: linear-gradient(to right, #0f271f, #286259, #2f6453);
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+background-image: url(./bg-img.jpg);
 
   }
   .wrapper {
@@ -95,13 +95,13 @@ input, select{
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
   cursor: pointer;
-  background-color: rgb(41, 57, 194);
-  border: none;
+  background-color: #292d50;
+  border: 1px solid #1d1f37;
   border-radius: 4px;
   height: 40px;
   width: 360px;
   color: aliceblue;
-  background-image: url(./bg-btn.JPG);
+
 }
 .btn:hover{
   opacity: 0.8;
@@ -125,7 +125,6 @@ input:valid {
   font-style: italic;
   font-family: 'Noto Sans', sans-serif;
   color: rgb(254, 6, 6);
-  border: 1 solid red;
   text-shadow:
   0.2px   0.2px 0 #000,
   -0.2px -0.2px 0 #000,

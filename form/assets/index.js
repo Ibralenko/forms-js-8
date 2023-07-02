@@ -71,7 +71,7 @@ function isValidateForm  () {
         document.querySelector('.error-password').innerHTML = '';
         document.querySelector('.error-name').innerHTML = '';
         document.querySelector('.error-email').innerHTML = '';
-        document.querySelector('.errorsInfo').innerHTML = ''
+        document.querySelector('.errorsInfo').innerHTML = '';
         registrationForm.reset();
         return true;
     }
