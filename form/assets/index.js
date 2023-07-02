@@ -81,6 +81,7 @@ registrationForm.addEventListener('submit', function(event){
     validateEmail(inputUserEmail);
     checkPassword(inputPassword);
     checkPasswords(inputPassword ,inputConfirmPassword);
+    checkAgreement(inputCheckbox);
     if (isValidateForm ()=== true){
         console.log('Регистрация завершена')
     }

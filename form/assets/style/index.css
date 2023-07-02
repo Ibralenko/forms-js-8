@@ -39,6 +39,7 @@ html {
   color: rgb(236, 230, 230);
   display: flex;
   flex-direction: column;
+ 
   border-radius: 5px;
   font-family: 'Noto Sans', sans-serif;
   font-style: italic;
@@ -62,13 +63,20 @@ html {
   margin: 10px;
 }
 input, select{
-  margin: 5px auto;
+  margin: 1px auto;
 }
 .input, .select-input{
   border-radius: 5px;
   height: 33px;
   width: 350px;
 }
+.select-container{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}
+
 .select__option{
   box-shadow: 2px 2px 25px 0 #040404;
   border-radius: 5px;
@@ -91,12 +99,19 @@ input, select{
   height: 40px;
   width: 360px;
   color: aliceblue;
-
+  margin-top: 0px;
+}
+.checkbox{
+  margin: 0px;
+  margin-right: 8px;
+}
+p{
+  font-size: 13px;
 }
 .btn:hover{
   opacity: 0.8;
 }
-input:invalid {
+.important {
   background-color: rgb(251, 223, 223);
   border: 1px solid rgb(199, 2, 2);
 }

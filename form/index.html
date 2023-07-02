@@ -21,19 +21,19 @@
         <form name="registrationForm" action="#" novalidate class="form">
             <label for="name" class="label">Имя:</label>
             <span class="error-name"></span>
-            <input class="input" id="name" name="name" minlength="2" maxlength="20" required placeholder="Ваше имя">
+            <input class="input important" id="name" name="name" minlength="2" maxlength="20" required placeholder="Ваше имя">
             <label for="email" class="label">Email:</label>
             <span class="error-email"></span>
-            <input class="input" id="email" name="email" required placeholder="Ваш адрес электронной почты">
+            <input class="input important" id="email" name="email" required placeholder="Ваш адрес электронной почты">
             <label for="age" class="label">Возраст:</label>
             <input type="number" id="age" value="18" size="3" class="input" name="age" min="10" max="100" required
                 placeholder="Введите ваш возраст">
-            <!-- <div class="select-container">
-                <span class="error-sex" id="age-error"></span>
-                <label for="gender-input" class="label-select"><b>Выберите пол:</b></label>
+                <div class="select-container">
+                    <span class="error-sex" id="age-error"></span>
+                    <label for="man" class="label"><b>Выберите пол:</b></label>
                 <p><input class="gender-input" id="man" name="gender" type="radio" value="man">Мужчина</p>
                 <p><input class="gender-input" id="woman" name="gender" type="radio" value="woman">Женщина</p>
-            </div> -->
+            </div>
             <span class="error-profession"></span>
             <label class="label" for="profession">Выберите вашу профессию:</label>
             <select class="select-input" id="profession" class="profession" name="profession" required
@@ -48,17 +48,16 @@
             </select>
                 <label class="label" for="password">Введите пароль:</label>
                 <span class="error-password"></span>
-                <input id="password" class="input" type="password" required minlength="8" size="40" name="password"
+                <input id="password" class="input important" type="password" required minlength="8" size="40" name="password"
                     placeholder="Введите пароль"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></p>
                 <label class="label" for="password">Повторите пароль:</label>
                 <span class="error-password2"></span>
-                <input class="input" id="passwordRepeat" type="password" required minlength="8" size="40" name="passwordRepeat"
+                <input class="input important" id="passwordRepeat" type="password" required minlength="8" size="40" name="passwordRepeat"
                     placeholder="Повторите пароль"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></p>
             <span class="error-checkbox" ></span>
-            <label class="label" for="checkbox">Согласие на обработку данных:</label>
-            <p><input class="checkbox" id="checkbox" type="checkbox" name="checkbox">Я прочитал условия</p>
+            <p><input class="checkbox" id="checkbox" type="checkbox" name="checkbox">Я ознакомился с условиями</p>
             <p class="errorsInfo"></p>
             <p><input class="btn" type="submit" name="submit" value="Зарегистрироваться"></p>
 
