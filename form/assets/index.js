@@ -31,13 +31,14 @@ function validateEmail(email) {
     }
 };
 
-function checkRadio() {
+function checkSex() {
     const man = document.querySelector('#man');
     const woman = document.querySelector('#woman');
     if (man.checked || woman.checked) {
         return true;
     } else {
         document.querySelector(".error-sex").innerText = "Выберите ваш пол";
+        return false;
     }
 };
 
@@ -73,7 +74,7 @@ function isValidateForm() {
     if (checkName(inputUserName) === false ||
         checkAgreement(inputCheckbox) === false ||
         validateEmail(inputUserEmail) === false ||
-        checkRadio(inputCheckbox) ===  false ||
+        checkSex(inputUserSex) ===  false ||
         checkPassword(inputPassword) === false ||
         checkPasswords(inputPassword, inputConfirmPassword) === false) {
         document.querySelector('.errorsInfo').innerHTML = 'Заполните все поля'
@@ -86,6 +87,7 @@ function isValidateForm() {
         document.querySelector('.error-name').innerHTML = '';
         document.querySelector('.error-email').innerHTML = '';
         document.querySelector('.errorsInfo').innerHTML = '';
+        document.querySelector(".error-sex").innerText = "";
         registrationForm.reset();
         return true;
     }
@@ -98,9 +100,8 @@ registrationForm.addEventListener('submit', function (event) {
     checkPassword(inputPassword);
     checkPasswords(inputPassword, inputConfirmPassword);
     checkAgreement(inputCheckbox);
-    checkRadio(inputCheckbox);
     if (isValidateForm() === true) {
-        console.log('Регистрация завершена')
+        console.log('Регистрация завершена');
     }
 });
 
