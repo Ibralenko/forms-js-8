@@ -125,7 +125,8 @@ input:valid {
 .error-email,
 .error-checkbox,
 .error-profession,
-.errorsInfo{
+.errorsInfo,
+.error-sex{
   margin: 0;
   font-size: 10px;
   font-style: italic;

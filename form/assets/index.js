@@ -31,6 +31,16 @@ function validateEmail(email) {
     }
 };
 
+function checkRadio() {
+    const man = document.querySelector('#man');
+    const woman = document.querySelector('#woman');
+    if (man.checked || woman.checked) {
+        return true;
+    } else {
+        document.querySelector(".error-sex").innerText = "Выберите ваш пол";
+    }
+};
+
 function checkPassword(password) {
     const correctPassword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     if (password.value.match(correctPassword)) {
@@ -63,6 +73,7 @@ function isValidateForm() {
     if (checkName(inputUserName) === false ||
         checkAgreement(inputCheckbox) === false ||
         validateEmail(inputUserEmail) === false ||
+        checkRadio(inputCheckbox) ===  false ||
         checkPassword(inputPassword) === false ||
         checkPasswords(inputPassword, inputConfirmPassword) === false) {
         document.querySelector('.errorsInfo').innerHTML = 'Заполните все поля'
@@ -87,6 +98,7 @@ registrationForm.addEventListener('submit', function (event) {
     checkPassword(inputPassword);
     checkPasswords(inputPassword, inputConfirmPassword);
     checkAgreement(inputCheckbox);
+    checkRadio(inputCheckbox);
     if (isValidateForm() === true) {
         console.log('Регистрация завершена')
     }
